@@ -1,6 +1,7 @@
 ## RX-JAVA in Practice
-###### <span style="font-family:Helvetica Neue; font-weight:bold">As a Knowledge Sharing session at <span style="color:#e49436">Networked Assets</span></span>
-###### <span style="font-family:Helvetica Neue; font-weight:bold">By <span style="color:#e49436">JAROSŁAW WATRAL</span></span>
+<span style="font-family:Helvetica Neue; font-weight:bold">As a Knowledge Sharing session at <span style="color:#e49436">Networked Assets</span></span>
+<br>
+<span style="font-family:Helvetica Neue; font-weight:bold">By <span style="color:#e49436">JAROSŁAW WATRAL</span></span>
 
 
 ---
@@ -19,7 +20,7 @@
 +++
 
 ## Who uses RXJAVA?
-![Image-Relative](assets/who-uses-reactivex.png)
+![Image-Relative](assets/image/who-uses-reactivex.png)
 
 ---
 
