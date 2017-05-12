@@ -1,0 +1,6 @@
+[submodule "learnrxjava_jhusain"]
+	path = learnrxjava_jhusain
+	url = git@github.com:jhusain/learnrxjava.git
+[submodule "RxInPractice_nhpatt"]
+	path = RxInPractice_nhpatt
+	url = git@github.com:nhpatt/RxInPractice.git
