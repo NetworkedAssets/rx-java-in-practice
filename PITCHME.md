@@ -19,6 +19,10 @@
 
 +++
 
+![Image-Relative](https://pbs.twimg.com/media/B5oIZCXCMAI_vTn.jpg:large)
+
++++
+
 ## Who uses RXJAVA?
 ![Image-Relative](assets/image/who-uses-reactivex.png)
 
@@ -79,6 +83,12 @@
 
 +++
 
+## Embrace Concurrency
+Note:
+Server-side concurrency is needed to effectively reduce network chattiness. Without concurrent execution on the server, a single “heavy” client request might not be much better than many “light” requests because each network request from a device naturally executes in parallel with other network requests. If the server-side execution of a collapsed “heavy” request does not achieve a similar level of parallel execution it may be slower than the multiple “light” requests even accounting for saved network latency.
+
++++
+
 ## Java Futures are Expensive to Compose
 Note:
 Java Futures are straight-forward to use for a single level of asynchronous execution but they start to add non-trivial complexity when they’re nested (prior to Java 8 CompletableFuture).
@@ -102,19 +112,27 @@ Similar to Futures though, they are easy to use with a single level of asynchron
 
 +++
 
+## Let's hear what they have to say:
+
++++
+
+## VideoService example
+![YouTube Video](https://youtu.be/_t06LRX0DV0?t=1884)
+
++++
+
 ```Groovy
   getListOfLists(userId).mapMany({ VideoList list ->
     list.getVideos() // for each VideoList we want to fetch the videos
       .take(10) // we only want the first 10 of each list
-      .mapMany({ Video video -> 
+      .flatMap({ Video video -> 
         def m = video.getMetadata().map({ // for each video we want to fetch metadata
           Map<String, String> md -> 
           return [title: md.get("title"), // transform to the data and format we want
               length: md.get("duration")]
         })
         def b = video.getBookmark(userId).map({ 
-          position -> 
-          return [bookmark: position]
+          position -> return [bookmark: position]
         })
         def r = video.getRating(userId).map({ 
           VideoRating rating -> 
@@ -146,6 +164,9 @@ Note:
 
 
 ---
+
+## Cool links
+- 
 
 ## Markdown Slides
 <span style="font-size:0.6em; color:gray">Press Down key for details.</span> |
